@@ -10,7 +10,9 @@ use App\Http\Controllers\LoginPetugasController;
 Route::get ('/update_pengaduan/{id}', [PengaduanController::class,'update']);
 Route::post('/update_pengaduan/{id}', [PengaduanController::class,'proses_update']);
 
-Route::post('register_petugas', [PetugasController::class,'table']);
+Route::post('/tanggapan/{id}', [PetugasController::class,'proses_tanggapan']);
+Route::get ('/tanggapan/{id}', [PetugasController::class,'tanggapan']);
+
 Route::post('register_petugas', [PetugasController::class,'proses_registrasi_petugas']);
 Route::post('/register', [MasyarakatController::class,'proses_register']);
 Route::get('/register', [MasyarakatController::class,'buat_akun']);
@@ -42,7 +44,8 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['cekPetugas'])->group(function () {
     Route::get('/loginpetugas', [LoginPetugasController::class,'index']);
     Route::get('/halaman_petugas', [PetugasController::class,'home']);
-    Route::get('/logout', [LoginPetugasController::class,'logout']);
+    Route::get('/logoutpetugas', [LoginPetugasController::class,'logoutpetugas']);
+    Route::get('/home_petugas', [PetugasController::class,'tablep']);
   });
 
 

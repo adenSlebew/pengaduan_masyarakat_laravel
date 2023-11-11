@@ -25,8 +25,8 @@
                     <input type="password"class="form-control"id="password" name="password"><br>
                 </div>
                     <button type="submit" name="" class="login-btn" style="margin-bottom: 15px;">Login</button>
-                    <a href="{{url('register')}}"><button type="submit" name="" class="login-btn" style="margin-bottom: 5px;">Registrasi</button></a>
-                 
+                    <a href="{{url('register')}}"><button type="button" name="" class="login-btn" style="margin-bottom: 5px;">Registrasi</button></a>
+                    <a href="{{url('home')}}"><button type="submit" name="" class="login-btn" style="margin-bottom: 5px;">Bek</button></a>
             </form>
         </div>
             

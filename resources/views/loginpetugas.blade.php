@@ -26,7 +26,8 @@
                 </div>
                     <button type="submit" name="" class="login-btn" style="margin-bottom: 15px;">Login</button>
                     <a href="{{url('register_petugas')}}"><button type="button" name="" class="login-btn" style="margin-bottom: 30px;">Registrasi Petugas</button></a>
-            </form>
+                    <a href="{{url('home')}}"><button type="button" name="" class="login-btn" style="margin-bottom: 30px;">Bek</button></a>
+                </form>
         </div>     
     </body>
 </html>

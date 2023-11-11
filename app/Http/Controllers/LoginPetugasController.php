@@ -20,10 +20,10 @@ class LoginPetugasController extends Controller
             echo"gagal";
         }
     }
-    function logout(){
-        Auth::guard("petugas")->logout();
+    function logoutpetugas(){
+        Auth::guard("petugas")->logoutpetugas();
 
-        return redirect('petugas_login');
+        return redirect('home');
     }
-  
+   
 }

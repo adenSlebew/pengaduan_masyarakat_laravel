@@ -43,8 +43,28 @@ class PetugasController extends Controller
 
             return view('halaman_petugas',['pengaduan' => $pengaduan]);
         }
-       
-        
+        function tablep(){
+
+            $pengaduan = Pengaduan::all();
+    
+            return view('home_petugas',['pengaduan'=> $pengaduan]);
+        }
+        function proses_tanggapan(Request $request,$id){
+
+    
+            $status = $request->status;
+                
+            DB::table('pengaduan')->where('id_pengaduan',$id) -> update([
+                
+                'status' => $status,
+            ]);
+            return redirect('home_petugas');
+        }
+        function tanggapan($id){
+            $pengaduan = DB::table('pengaduan')->where('id_pengaduan','=',$id)->first();
+                
+            return view('/tanggapan',['pengaduan'=> $pengaduan]);
+        }
     
     }
    

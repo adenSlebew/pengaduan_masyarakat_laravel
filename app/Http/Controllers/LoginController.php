@@ -26,6 +26,13 @@ class LoginController extends Controller
     function logout(){
         Auth::logout();
 
-        return redirect('/login');
+        return redirect('/home');
+    }
+    function table(){
+
+        $pengaduan = Pengaduan::all();
+
+        return view('home_petugas',['judul'=>
+        $judul,'pengaduan'=> $pengaduan]);
     }
 }
